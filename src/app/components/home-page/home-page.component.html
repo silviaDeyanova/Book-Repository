@@ -1,6 +1,6 @@
 <div id="mainPage">
   <div id="content">
-    <div id="">
+    <div id="title">
       <p>Home</p>
     </div>
     <div id="searchbar">
@@ -13,6 +13,12 @@
         />
         <button>Search</button>
       </form>
+    </div>
+    <div id="searchResult" *ngIf="foundBooks">
+      <div id="book" *ngFor="let book of foundBooks">
+        <p>{{ book.title }}</p>
+        <p>{{ book.resume }}</p>
+      </div>
     </div>
   </div>
 </div>

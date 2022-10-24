@@ -1,12 +1,13 @@
 #mainPage {
   display: flex;
   justify-content: center;
-  margin: 100px;
+  margin: 140px;
 }
 
 #content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 button {
@@ -21,9 +22,40 @@ button {
   }
 }
 
-input{
-    border-radius: 5px;
-    height: 26px;
-    width: 400px;
-    margin-right: 10px;
+input {
+  border-radius: 5px;
+  height: 26px;
+  width: 400px;
+  margin-right: 10px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  p {
+    font-weight: bolder;
+    font-size: xx-large;
+  }
+}
+
+#searchbar {
+  display: flex;
+  justify-content: center;
+}
+
+#searchResult {
+  margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#book {
+  margin: 25px;
+  border: 2px groove cadetblue;
+  border-radius: 7px;
+  padding: 10px;
+  max-width: 280px;
+  max-height: 250px;
 }

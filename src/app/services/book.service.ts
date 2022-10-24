@@ -39,5 +39,47 @@ export class BookService {
         'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
       likes: 4,
     },
+    {
+      id: 3,
+      title: 'Opal',
+      resume:
+        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
+      likes: 4,
+    },
+    {
+      id: 3,
+      title: 'Opal',
+      resume:
+        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
+      likes: 4,
+    },
+    {
+      id: 4,
+      title: 'Opal',
+      resume:
+        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
+      likes: 4,
+    },
+    {
+      id: 5,
+      title: 'Opal',
+      resume:
+        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
+      likes: 4,
+    },
+    {
+      id: 6,
+      title: 'Opal',
+      resume:
+        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
+      likes: 4,
+    },
+    {
+      id: 7,
+      title: 'Opal',
+      resume:
+        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
+      likes: 4,
+    },
   ];
 }
