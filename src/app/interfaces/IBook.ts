@@ -3,7 +3,8 @@ import { IComment } from './IComment';
 export interface IBook {
   id: number;
   title: string;
+  author: string;
   resume: string;
-  // comments: IComment[];
+  comments?: IComment[];
   likes: number;
 }

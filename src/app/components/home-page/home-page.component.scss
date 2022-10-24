@@ -46,9 +46,11 @@ input {
 }
 
 #searchResult {
-  margin-top: 70px;
   display: flex;
   flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  margin-top: 70px;
 }
 
 #book {
@@ -57,5 +59,6 @@ input {
   border-radius: 7px;
   padding: 10px;
   max-width: 280px;
-  max-height: 250px;
+  max-height: 290px;
+  background-color: whitesmoke;
 }
