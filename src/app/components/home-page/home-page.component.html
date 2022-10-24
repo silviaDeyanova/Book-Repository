@@ -4,8 +4,13 @@
       <p>Home</p>
     </div>
     <div id="searchbar">
-      <form>
-        <input type="text" placeholder="Search book" />
+      <form (ngSubmit)="searchBook(searchTerm)">
+        <input
+          [(ngModel)]="searchTerm"
+          name="searchTerm"
+          type="text"
+          placeholder="Search book"
+        />
         <button>Search</button>
       </form>
     </div>
