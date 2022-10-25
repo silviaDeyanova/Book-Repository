@@ -7,9 +7,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
+import { BookDescriptionComponent } from './components/book-description/book-description.component';
 
 @NgModule({
-  declarations: [AppComponent, HomePageComponent, PageHeaderComponent],
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    PageHeaderComponent,
+    BookDescriptionComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

@@ -7,88 +7,87 @@ import { IBook } from '../interfaces/IBook';
 })
 export class BookService {
   constructor() {}
+
   searchBook(searchTerm: string): Observable<IBook[]> {
     let term = searchTerm.toLowerCase();
     let result = this.DATA.filter((book) => {
       return book.title.toLowerCase().indexOf(term) > -1;
     });
-    // let emitter = new EventEmitter(true);
-    // emitter.emit(result);
     return of(result);
+  }
+
+  getMostRatedBooks(): Observable<IBook[]> {
+    return of(this.DATA.filter((book) => book.likes >= 10));
+  }
+
+  getAllBooks(): Observable<IBook[]> {
+    return of(this.DATA);
+
+
+
+    
+  }
+
+  getBookById(id: number): Observable<any> {
+    this.DATA[id] = {
+        id: id,
+        title: 'The Selection',
+        author: 'Kiera Cass',
+        resume:
+          'For thirty-five girls, the Selection is the chance of a lifetime. The opportunity to escape the life laid out for them since birth. To be swept up in a world of glittering gowns and priceless jewels. To live in a palace and compete for the heart of gorgeous Prince Maxon.',
+        likes: 10,
+        cover: '../../assets/theSelection.jpg',
+      };
+
+
+    return of(this.DATA[id]);
   }
 
   DATA: IBook[] = [
     {
       id: 0,
-      title: 'Obsidian',
-      author: 'Jennifer L. Armentrout',
+      title: 'The Selection',
+      author: 'Kiera Cass',
       resume:
-        'When we moved to West Virginia right before my senior year, I’d pretty much resigned myself to thick accents, dodgy internet access, and a whole lot of boring… until I spotted my hot neighbor, with his looming height and eerie green eyes. Things were looking up.',
-      likes: 5,
+        'For thirty-five girls, the Selection is the chance of a lifetime. The opportunity to escape the life laid out for them since birth. To be swept up in a world of glittering gowns and priceless jewels. To live in a palace and compete for the heart of gorgeous Prince Maxon.',
+      likes: 10,
+      cover: '../../assets/theSelection.jpg',
     },
     {
       id: 1,
-      title: 'Onyx',
-      author: 'Jennifer L. Armentrout',
+      title: 'The Elite',
+      author: 'Kiera Cass',
       resume:
-        'Thanks to his alien mojo, Daemon’s determined to prove what he feels for me is more than a product of our bizarro connection. So I’ve sworn him off, even though he’s running more hot than cold these days. But we’ve got bigger problems.',
-      likes: 4,
+        "The Selection began with thirty-five girls. Now with the group narrowed down to the six Elite, the competition to win Prince Maxon's heart is fiercer than ever—and America is still struggling to decide where her heart truly lies. Is it with Maxon, who could make her life a fairy tale? Or with her first love, Aspen?",
+      likes: 14,
+      cover: '../../assets/theElite.jpg',
     },
     {
       id: 2,
-      title: 'Opal',
-      author: 'Jennifer L. Armentrout',
+      title: 'The One',
+      author: 'Kiera Cass',
       resume:
-        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
+        "When she was chosen to compete in the Selection, America never dreamed she would find herself anywhere close to the crown—or to Prince Maxon's heart. But as the end of the competition approaches, and the threats outside the palace walls grow more vicious, America realizes just how much she stands to lose—and how hard she'll have to fight for the future she wants. ",
       likes: 4,
+      cover: '../../assets/theOne.jpg',
     },
     {
       id: 3,
-      title: 'Opal',
-      author: 'Jennifer L. Armentrout',
+      title: 'The Heir',
+      author: 'Kiera Cass',
       resume:
-        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
+        "Princess Eadlyn has grown up hearing endless stories about how her mother and father met. Twenty years ago, America Singer entered the Selection and won the heart of Prince Maxon - and they lived happily ever after. Eadlyn has always found their fairy-tale story romantic, but she has no interest in trying to repeat it. If it were up to her, she'd put off marriage for as long as possible.",
       likes: 4,
-    },
-    {
-      id: 3,
-      title: 'Opal',
-      author: 'Jennifer L. Armentrout',
-      resume:
-        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
-      likes: 4,
+      cover: '../../assets/theHeir.jpg',
     },
     {
       id: 4,
-      title: 'Opal',
-      author: 'Jennifer L. Armentrout',
+      title: 'The Crown',
+      author: 'Kiera Cass',
       resume:
-        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
+        'When Eadlyn became the first princess of Illéa to hold her own Selection, she didn’t think she would fall in love with any of her thirty-five suitors. She spent the first few weeks of the competition counting down the days until she could send them all home. But as events at the palace force Eadlyn even further into the spotlight, she realizes that she might not be content remaining alone.',
       likes: 4,
-    },
-    {
-      id: 5,
-      title: 'Opal',
-      author: 'Jennifer L. Armentrout',
-      resume:
-        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
-      likes: 4,
-    },
-    {
-      id: 6,
-      title: 'Opal',
-      author: 'Jennifer L. Armentrout',
-      resume:
-        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
-      likes: 4,
-    },
-    {
-      id: 7,
-      title: 'Opal',
-      author: 'Jennifer L. Armentrout',
-      resume:
-        'When he set out to prove his feelings for me, he wasn’t fooling around. Doubting him isn’t something I’ll do again, and now that we’ve made it through the rough patches, well… There’s a lot of spontaneous combustion going on.',
-      likes: 4,
+      cover: '../../assets/theCrown.jpg',
     },
   ];
 }

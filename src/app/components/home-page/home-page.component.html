@@ -5,18 +5,14 @@
     </div>
     <div id="searchbar">
       <form (ngSubmit)="searchBook(searchTerm)">
-        <input
-          [(ngModel)]="searchTerm"
-          name="searchTerm"
-          type="text"
-          placeholder="Search book"
-        />
+        <input [(ngModel)]="searchTerm" name="searchTerm" type="text" placeholder="Search book" />
         <button>Search</button>
       </form>
     </div>
     <div id="searchResult" *ngIf="foundBooks">
-      <div id="book" *ngFor="let book of foundBooks">
-        <p>{{ book.title }}</p>
+      <div [routerLink]="['/home/book-description/' + book.id]" routerLinkActive="active" id="book" *ngFor="let book of foundBooks">
+        <h2>{{ book.title }}</h2>
+        <h4>{{ book.author }}</h4>
         <p>{{ book.resume }}</p>
       </div>
     </div>

@@ -9,16 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
   searchTerm: string = '';
-  foundBooks: IBook[] | undefined;
+  foundBooks!: IBook[];
 
   constructor(private bookService: BookService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getMostRatedBooks();
+  }
 
   public searchBook(searchWord: string): void {
     this.bookService.searchBook(searchWord).subscribe((books) => {
       this.foundBooks = books;
     });
-    console.log(this.foundBooks);
+  }
+
+  private getMostRatedBooks(): void {
+    this.bookService.getMostRatedBooks().subscribe((books) => {
+      this.foundBooks = books;
+    });
   }
 }

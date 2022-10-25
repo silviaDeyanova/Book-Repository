@@ -1,0 +1,39 @@
+#mainPage {
+  display: flex;
+  justify-content: center;
+  margin: 80px;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  border: 2px groove cadetblue;
+  border-radius: 7px;
+  padding: 70px;
+}
+
+#title {
+  width: 50%;
+  h3 {
+    font-style: italic;
+  }
+}
+
+#description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  #cover {
+    display: flex;
+    flex-direction: column;
+    img {
+      height: 60%;
+    }
+  }
+  p {
+    width: 50%;
+  }
+}

@@ -7,4 +7,5 @@ export interface IBook {
   resume: string;
   comments?: IComment[];
   likes: number;
+  cover?: string;
 }
