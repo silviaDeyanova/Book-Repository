@@ -10,41 +10,26 @@ export class BookService {
 
   searchBook(searchTerm: string): Observable<IBook[]> {
     let term = searchTerm.toLowerCase();
-    let result = this.DATA.filter((book) => {
+    let result = Object.values(this.DATA).filter((book) => {
       return book.title.toLowerCase().indexOf(term) > -1;
     });
     return of(result);
   }
 
   getMostRatedBooks(): Observable<IBook[]> {
-    return of(this.DATA.filter((book) => book.likes >= 10));
+    return of(Object.values(this.DATA).filter((book) => book.likes >= 10));
   }
 
   getAllBooks(): Observable<IBook[]> {
-    return of(this.DATA);
-
-
-
-    
+    return of(Object.values(this.DATA));
   }
 
   getBookById(id: number): Observable<any> {
-    this.DATA[id] = {
-        id: id,
-        title: 'The Selection',
-        author: 'Kiera Cass',
-        resume:
-          'For thirty-five girls, the Selection is the chance of a lifetime. The opportunity to escape the life laid out for them since birth. To be swept up in a world of glittering gowns and priceless jewels. To live in a palace and compete for the heart of gorgeous Prince Maxon.',
-        likes: 10,
-        cover: '../../assets/theSelection.jpg',
-      };
-
-
     return of(this.DATA[id]);
   }
 
-  DATA: IBook[] = [
-    {
+  DATA: { [id: string]: IBook } = {
+    0: {
       id: 0,
       title: 'The Selection',
       author: 'Kiera Cass',
@@ -53,7 +38,7 @@ export class BookService {
       likes: 10,
       cover: '../../assets/theSelection.jpg',
     },
-    {
+    1: {
       id: 1,
       title: 'The Elite',
       author: 'Kiera Cass',
@@ -62,7 +47,7 @@ export class BookService {
       likes: 14,
       cover: '../../assets/theElite.jpg',
     },
-    {
+    2: {
       id: 2,
       title: 'The One',
       author: 'Kiera Cass',
@@ -71,7 +56,7 @@ export class BookService {
       likes: 4,
       cover: '../../assets/theOne.jpg',
     },
-    {
+    3: {
       id: 3,
       title: 'The Heir',
       author: 'Kiera Cass',
@@ -80,7 +65,7 @@ export class BookService {
       likes: 4,
       cover: '../../assets/theHeir.jpg',
     },
-    {
+    4: {
       id: 4,
       title: 'The Crown',
       author: 'Kiera Cass',
@@ -89,5 +74,5 @@ export class BookService {
       likes: 4,
       cover: '../../assets/theCrown.jpg',
     },
-  ];
+  };
 }
