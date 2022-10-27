@@ -11,7 +11,7 @@ export class BookService {
   searchBook(searchTerm: string): Observable<IBook[]> {
     let term = searchTerm.toLowerCase();
     let result = Object.values(this.DATA).filter((book) => {
-      return book.title.toLowerCase().indexOf(term) > -1;
+      return book.title.toLowerCase().includes(term);
     });
     return of(result);
   }

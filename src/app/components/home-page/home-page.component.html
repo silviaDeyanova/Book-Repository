@@ -4,13 +4,19 @@
       <p>Home</p>
     </div>
     <div id="searchbar">
-      <div>
-        <input [(ngModel)]="searchTerm" name="searchTerm" type="text" placeholder="Search book" />
-        <button (click)="searchBook(searchTerm)">Search</button>
+      <div class="inputData">
+        <input
+          [(ngModel)]="searchTerm" name="searchTerm" type="text" placeholder="Search book" (ngModelChange)="searchBook(searchTerm)"/>
+        <button (click)="searchBook(searchTerm)">🔎</button>
+      </div>
+      <div class="wrapper">
+        <div id="searchList" *ngIf="foundBooks" [class.hide]="foundBooks.length === 0" #draggable>
+          <p *ngFor="let book of foundBooks" [routerLink]="['/home/book-description/' + book.id]" routerLinkActive="active">{{ book.title }}</p>
+        </div>
       </div>
     </div>
-    <div id="searchResult" *ngIf="foundBooks">
-      <div [routerLink]="['/home/book-description/' + book.id]" routerLinkActive="active" id="book" *ngFor="let book of foundBooks">
+    <div id="searchResult" *ngIf="mostRatedBooks">
+      <div [routerLink]="['/home/book-description/' + book.id]" routerLinkActive="active" id="book" *ngFor="let book of mostRatedBooks">
         <h2>{{ book.title }}</h2>
         <h4>{{ book.author }}</h4>
         <p>{{ book.resume }}</p>

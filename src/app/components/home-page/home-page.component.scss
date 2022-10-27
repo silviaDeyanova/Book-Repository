@@ -1,7 +1,7 @@
 #mainPage {
   display: flex;
   justify-content: center;
-  margin: 140px;
+  margin: 70px;
 }
 
 #content {
@@ -11,22 +11,27 @@
 }
 
 button {
-  width: 90px;
-  height: 32px;
-  border-radius: 5px;
+  border: none;
+  background-color: field;
+  display: inline-block;
+  width: 9%;
+  padding: 0;
 
   &:hover {
-    background-color: aliceblue;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
   }
 }
 
 input {
-  border-radius: 5px;
-  height: 26px;
-  width: 400px;
-  margin-right: 10px;
+  height: 28px;
+  width: 88%;
+  border: none;
+  margin-left: 5px;
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
 
 #title {
@@ -40,19 +45,13 @@ input {
   }
 }
 
-#searchbar {
-  display: flex;
-  justify-content: center;
-}
-
 #searchResult {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-
+  justify-content: space-between;
   width: 100%;
   margin: auto;
-  margin-top: 70px;
+  margin-top: 50px;
 }
 
 #book {
@@ -73,4 +72,44 @@ input {
   h4 {
     font-style: italic;
   }
+}
+.inputData {
+  width: 440px;
+  margin: 0 auto;
+}
+
+.inputData {
+  border: 2px inset rgb(133, 133, 133);
+  border-radius: 5px;
+  height: 30px;
+  background-color: field;
+}
+
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 440px;
+
+  #searchList {
+    border-radius: 3px;
+    box-shadow: 0px 1.5px 5px 1px rgba(155, 154, 154, 0.75);
+    background-color: rgb(255, 255, 255);
+    min-height: 90px;
+    width: 440px;
+    position: absolute;
+
+    p {
+      margin: 0;
+      padding: 5px;
+      &:hover {
+        background-color: rgb(245, 240, 240);
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+      }
+    }
+  }
+}
+
+.hide {
+  visibility: hidden;
 }
