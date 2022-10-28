@@ -1,6 +1,12 @@
 import { BookService } from './../../services/book.service';
 import { IBook } from './../../interfaces/IBook';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +17,8 @@ export class HomePageComponent implements OnInit {
   searchTerm: string = '';
   mostRatedBooks!: IBook[];
   foundBooks!: IBook[];
-  @ViewChild('draggable') private draggableElement!: ElementRef;
+  isHidden: boolean = false;
+  @ViewChild('hide') private hideElementRef!: ElementRef;
 
   constructor(private bookService: BookService) {}
 
@@ -23,10 +30,10 @@ export class HomePageComponent implements OnInit {
     if (searchWord !== '') {
       this.bookService.searchBook(searchWord).subscribe((books) => {
         this.foundBooks = books;
+        this.isHidden = false;
       });
     } else {
       this.foundBooks = [];
-      // this.draggableElement.nativeElement.remove();
     }
   }
 
@@ -35,5 +42,20 @@ export class HomePageComponent implements OnInit {
       this.mostRatedBooks = books;
     });
     console.log(this.mostRatedBooks);
+  }
+
+  public changeTheMostRatedCotent(searchWord: string): void {
+    if (searchWord !== '') {
+      this.bookService.searchBook(searchWord).subscribe((books) => {
+        this.mostRatedBooks = books;
+      });
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickout(event: any) {
+    if (!this.hideElementRef.nativeElement.contains(event.target)) {
+      this.isHidden = true;
+    }
   }
 }
