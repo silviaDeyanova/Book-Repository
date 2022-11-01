@@ -15,8 +15,8 @@ export class LoginDialogComponent implements OnInit {
   ) {}
 
   form = this.formBuilder.group({
-    username: [this.data.username, Validators.required],
-    password: [this.data.password, Validators.required],
+    username: [null, Validators.required],
+    password: [null, Validators.required],
   });
 
   ngOnInit(): void {}
@@ -26,6 +26,12 @@ export class LoginDialogComponent implements OnInit {
   }
 
   submit() {
-    this.dialogRef.close(this.form.value);
+    if (
+      this.form.valid &&
+      !this.form.controls.username.pristine &&
+      !this.form.controls.password.pristine
+    ) {
+      this.dialogRef.close(this.form.value);
+    }
   }
 }
