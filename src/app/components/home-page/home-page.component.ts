@@ -41,7 +41,6 @@ export class HomePageComponent implements OnInit {
     this.bookService.getMostRatedBooks().subscribe((books) => {
       this.mostRatedBooks = books;
     });
-    console.log(this.mostRatedBooks);
   }
 
   public changeTheMostRatedCotent(searchWord: string): void {
@@ -54,7 +53,7 @@ export class HomePageComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   clickout(event: any) {
-    if (!this.hideElementRef.nativeElement.contains(event.target)) {
+    if (!this.hideElementRef?.nativeElement.contains(event.target)) {
       this.isHidden = true;
     }
   }

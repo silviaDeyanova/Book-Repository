@@ -1,0 +1,26 @@
+<div class="edit-course-form">
+  <h2 mat-dialog-title>Login</h2>
+
+  <mat-dialog-content [formGroup]="form">
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Username"
+        formControlName="username"
+        type="text"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Password"
+        formControlName="password"
+        type="password"
+      />
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+    <button mat-raised-button (click)="close()">Close</button>
+  </mat-dialog-actions>
+</div>
