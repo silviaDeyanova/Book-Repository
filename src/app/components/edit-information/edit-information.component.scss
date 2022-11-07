@@ -33,7 +33,26 @@
     height: 60%;
     width: fit-content;
   }
-  p {
-    width: 50%;
+
+  textarea {
+    width: 60%;
+    height: 60%;
   }
 }
+
+button {
+    background-color: #64b3f8;
+    border: none;
+    padding: 5px;
+    border: 2px groove cadetblue;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    width: 20%;
+    box-shadow: 0px 0.5px 4px 0.5px rgba(180, 180, 180, 0.75);
+
+    &:hover {
+      background-color: #89c8ff;
+      cursor: pointer;
+    }
+  }

@@ -22,7 +22,7 @@
         <h2 [routerLink]="['/home/book-description/' + book.id]" routerLinkActive="active">{{ book.title }}</h2>
         <h4>{{ book.author }}</h4>
         <p>{{ book.resume }}</p>
-        <button (click)="editContent()" [class.hide]="!loginService.isLoggedIn()">Edit content</button>
+        <button [class.hide]="!loginService.isLoggedIn()" [routerLink]="['/home/edit/' + book.id]" routerLinkActive="active">Edit content</button>
       </div>
     </div>
   </div>

@@ -28,6 +28,11 @@ export class BookService {
     return of(this.DATA[id]);
   }
 
+  updateBook(book: IBook) {
+    this.DATA[book.id] = book;
+    return of(this.DATA[book.id]);
+  }
+
   DATA: { [id: string]: IBook } = {
     0: {
       id: 0,
