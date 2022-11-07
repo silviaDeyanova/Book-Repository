@@ -6,9 +6,7 @@
     </div>
     <div id="description">
       <img src="{{ bookInfo.cover }}" />
-      <textarea [(ngModel)]="bookInfo.resume" name="resume">{{
-        bookInfo.resume
-      }}</textarea>
+      <textarea [(ngModel)]="bookInfo.resume" name="resume"></textarea>
     </div>
     <button (click)="submit()">Submit changes</button>
   </div>
