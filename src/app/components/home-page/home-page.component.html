@@ -18,10 +18,11 @@
       </div>
     </div>
     <div id="searchResult" *ngIf="mostRatedBooks">
-      <div [routerLink]="['/home/book-description/' + book.id]" routerLinkActive="active" id="book" *ngFor="let book of mostRatedBooks">
-        <h2>{{ book.title }}</h2>
+      <div id="book" *ngFor="let book of mostRatedBooks">
+        <h2 [routerLink]="['/home/book-description/' + book.id]" routerLinkActive="active">{{ book.title }}</h2>
         <h4>{{ book.author }}</h4>
         <p>{{ book.resume }}</p>
+        <button (click)="editContent()" [class.hide]="!loginService.isLoggedIn()">Edit content</button>
       </div>
     </div>
   </div>

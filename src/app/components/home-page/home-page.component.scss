@@ -10,19 +10,6 @@
   justify-content: center;
 }
 
-button {
-  border: none;
-  background-color: field;
-  display: inline-block;
-  width: 9%;
-  padding: 0;
-
-  &:hover {
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-  }
-}
-
 input {
   height: 28px;
   width: 88%;
@@ -57,20 +44,43 @@ input {
 #book {
   margin: 25px;
   border: 2px groove cadetblue;
-  border-radius: 7px;
+  border-radius: 18px 4px;
   padding: 20px;
   width: 270px;
-  height: 240px;
+  min-height: 240px;
   background-color: whitesmoke;
-  cursor: pointer;
+
+  h2 {
+    cursor: pointer;
+    display: inline-block;
+    &:hover {
+      color: rgb(78, 78, 78);
+    }
+  }
 
   h4,
   h2 {
-    margin: 5px;
+    margin: 4px;
   }
 
   h4 {
     font-style: italic;
+    margin-bottom: 9px;
+  }
+
+  button {
+    background-color: #64b3f8;
+    border: none;
+    padding: 5px;
+    border: 2px groove cadetblue;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #89c8ff;
+      cursor: pointer;
+    }
   }
 }
 .inputData {
@@ -83,6 +93,18 @@ input {
   border-radius: 5px;
   height: 30px;
   background-color: field;
+
+  button {
+    border: none;
+    background-color: field;
+    display: inline-block;
+    width: 9%;
+    padding: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .wrapper {
@@ -111,5 +133,5 @@ input {
 }
 
 .hide {
-  display: none;
+  visibility: hidden;
 }

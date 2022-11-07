@@ -1,9 +1,11 @@
+import { LoginService } from './../../services/login.service';
 import { BookService } from './../../services/book.service';
 import { IBook } from './../../interfaces/IBook';
 import {
   Component,
   ElementRef,
   HostListener,
+  Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -19,11 +21,16 @@ export class HomePageComponent implements OnInit {
   foundBooks!: IBook[];
   isHidden: boolean = false;
   @ViewChild('hide') private hideElementRef!: ElementRef;
+  isLoggedIn: boolean = false;
 
-  constructor(private bookService: BookService) {}
+  constructor(
+    private bookService: BookService,
+    public loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     this.getMostRatedBooks();
+    this.isLoggedIn = this.loginService.isLoggedIn();
   }
 
   public searchBook(searchWord: string): void {
@@ -57,4 +64,6 @@ export class HomePageComponent implements OnInit {
       this.isHidden = true;
     }
   }
+
+  editContent() {}
 }
