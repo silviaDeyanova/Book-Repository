@@ -47,12 +47,11 @@ export class PageHeaderComponent implements OnInit {
   // }
 
   openLoginDialog() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       width: '350px',
       height: '270px',
+      disableClose: true,
+      autoFocus: true,
       data: {},
     });
 
