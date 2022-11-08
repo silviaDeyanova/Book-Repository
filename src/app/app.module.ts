@@ -14,8 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
-import { EditInformationComponent } from './components/edit-information/edit-information.component';
-
+import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +22,7 @@ import { EditInformationComponent } from './components/edit-information/edit-inf
     PageHeaderComponent,
     BookDescriptionComponent,
     LoginDialogComponent,
-    EditInformationComponent,
+    EditDialogComponent,
   ],
   imports: [
     BrowserModule,

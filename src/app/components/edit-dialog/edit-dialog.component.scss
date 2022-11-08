@@ -1,0 +1,15 @@
+mat-dialog-content {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  width: 80%;
+  height: fit-content;
+}
+
+.container {
+  height: fit-content;
+
+  textarea {
+    height: 70px;
+  }
+}

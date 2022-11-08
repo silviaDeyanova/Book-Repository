@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
@@ -33,5 +33,10 @@ export class LoginDialogComponent implements OnInit {
     ) {
       this.dialogRef.close(this.form.value);
     }
+  }
+
+  @HostListener('window:keyup.Enter', ['$event'])
+  onEnterPressed(event: KeyboardEvent): void {
+    this.submit();
   }
 }
