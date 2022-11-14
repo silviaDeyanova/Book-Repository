@@ -38,7 +38,6 @@ export class BookComponent implements OnInit {
       if (result) {
         this.bookService.updateBook(bookId, result).subscribe(
           (book) => {
-            console.log('Book updated successfully');
             this.data = book;
           },
           (error) => {

@@ -10,7 +10,11 @@
         type="text"
       />
     </mat-form-field>
-    <span class="warning" *ngIf="form.controls.username.touched && form.controls.username.invalid">Required!</span>
+    <span
+      class="warning"
+      *ngIf="form.controls.username.touched && form.controls.username.invalid"
+      >Required!</span
+    >
     <mat-form-field>
       <input
         matInput
@@ -19,10 +23,25 @@
         type="password"
       />
     </mat-form-field>
-    <span class="warning" *ngIf="form.controls.password.touched && form.controls.password.invalid">The password is invalid!</span>
+    <span
+      class="warning"
+      *ngIf="form.controls.password.touched && form.controls.password.invalid"
+      >The password is invalid!</span
+    >
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="submit()"
+      [disabled]="
+        !form.valid &&
+        !form.controls.username.dirty &&
+        !form.controls.password.dirty
+      "
+    >
+      Submit
+    </button>
     <button mat-raised-button (click)="close()">Close</button>
   </mat-dialog-actions>
 </div>

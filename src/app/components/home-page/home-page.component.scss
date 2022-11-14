@@ -41,48 +41,6 @@ input {
   margin-top: 50px;
 }
 
-#book {
-  margin: 25px;
-  border: 2px groove cadetblue;
-  border-radius: 18px 4px;
-  padding: 20px;
-  width: 270px;
-  min-height: 240px;
-  background-color: whitesmoke;
-
-  h2 {
-    cursor: pointer;
-    display: inline-block;
-    &:hover {
-      color: rgb(78, 78, 78);
-    }
-  }
-
-  h4,
-  h2 {
-    margin: 4px;
-  }
-
-  h4 {
-    font-style: italic;
-    margin-bottom: 9px;
-  }
-
-  button {
-    background-color: #64b3f8;
-    border: none;
-    padding: 5px;
-    border: 2px groove cadetblue;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-
-    &:hover {
-      background-color: #89c8ff;
-      cursor: pointer;
-    }
-  }
-}
 .inputData {
   width: 440px;
   margin: 0 auto;

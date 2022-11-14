@@ -18,7 +18,7 @@
       </div>
     </div>
     <div id="searchResult" *ngIf="mostRatedBooks">
-      <div id="book" *ngFor="let book of mostRatedBooks">
+      <div *ngFor="let book of mostRatedBooks">
         <app-book [data]="book"></app-book>
       </div>
     </div>
