@@ -1,0 +1,14 @@
+<h2
+  [routerLink]="['/home/book-description/' + data.id]"
+  routerLinkActive="active"
+>
+  {{ data.title }}
+</h2>
+<h4>{{ data.author }}</h4>
+<p>{{ data.resume }}</p>
+<button
+  [class.hide]="!loginService.userPublicData"
+  (click)="openEditDialog(data.id)"
+>
+  Edit content
+</button>

@@ -19,10 +19,7 @@
     </div>
     <div id="searchResult" *ngIf="mostRatedBooks">
       <div id="book" *ngFor="let book of mostRatedBooks">
-        <h2 [routerLink]="['/home/book-description/' + book.id]" routerLinkActive="active">{{ book.title }}</h2>
-        <h4>{{ book.author }}</h4>
-        <p>{{ book.resume }}</p>
-        <button [class.hide]="!loginService.userPublicData" (click)="openEditDialog(book.id)">Edit content</button>
+        <app-book [data]="book"></app-book>
       </div>
     </div>
   </div>

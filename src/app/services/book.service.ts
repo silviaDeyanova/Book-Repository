@@ -32,7 +32,6 @@ export class BookService {
     book.id = bookId;
     let oldValue = this.DATA[book.id];
     this.DATA[book.id] = { ...oldValue, ...book };
-    debugger;
     return of(this.DATA[book.id]);
   }
 

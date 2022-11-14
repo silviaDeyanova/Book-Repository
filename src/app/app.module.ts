@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
+import { BookComponent } from './components/book/book.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { EditDialogComponent } from './components/edit-dialog/edit-dialog.compon
     BookDescriptionComponent,
     LoginDialogComponent,
     EditDialogComponent,
+    BookComponent,
   ],
   imports: [
     BrowserModule,
