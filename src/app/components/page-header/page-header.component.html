@@ -10,7 +10,8 @@
     </ul>
   </div>
   <div id="buttons">
-    <button (click)="openLoginDialog()">Login</button>
+    <button (click)="openLoginDialog()" *ngIf="!loginService.userPublicData">Login</button>
+    <button *ngIf="loginService.userPublicData" (click)="logout()">Logout</button>
     <button>Register</button>
   </div>
 </div>

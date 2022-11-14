@@ -14,7 +14,7 @@ export class PageHeaderComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private dialog: MatDialog,
-    private loginService: LoginService
+    public loginService: LoginService
   ) {}
 
   ngOnInit(): void {
@@ -60,5 +60,9 @@ export class PageHeaderComponent implements OnInit {
         this.loginService.login(result);
       }
     });
+  }
+
+  logout() {
+    this.loginService.logout();
   }
 }
