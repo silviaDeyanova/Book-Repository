@@ -28,8 +28,7 @@ export class BookService {
     return of(this.DATA[id]);
   }
 
-  updateBook(bookId: number, book: IBook) {
-    book.id = bookId;
+  updateBook(book: IBook) {
     let oldValue = this.DATA[book.id];
     this.DATA[book.id] = { ...oldValue, ...book };
     return of(this.DATA[book.id]);

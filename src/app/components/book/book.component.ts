@@ -20,23 +20,18 @@ export class BookComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openEditDialog(bookId: number) {
-    let selectedBook;
-    this.bookService.getBookById(bookId).subscribe((book) => {
-      selectedBook = book;
-    });
-
+  openEditDialog() {
     const dialogRef = this.dialog.open(EditDialogComponent, {
       width: '500px',
       height: '400px',
       disableClose: true,
       autoFocus: true,
-      data: selectedBook,
+      data: this.data,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.bookService.updateBook(bookId, result).subscribe(
+        this.bookService.updateBook(result).subscribe(
           (book) => {
             this.data = book;
           },
