@@ -26,9 +26,11 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+              
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/dw-web-shared-lib/assets/theme.scss"
             ],
             "scripts": []
           },

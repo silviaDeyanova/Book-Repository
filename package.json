@@ -22,6 +22,7 @@
     "@angular/router": "14.1.0",
     "@fortawesome/angular-fontawesome": "^0.11.1",
     "@angular/material-moment-adapter": "^14.1.0",
+    "@angularfy/autonumeric": "^3.0.3",
     "@microsoft/applicationinsights-web": "^2.8.9",
     "fileseek_plus": "^1.0.4",
     "imask": "^6.4.3",
