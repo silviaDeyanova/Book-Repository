@@ -10,17 +10,6 @@
   justify-content: center;
 }
 
-input {
-  height: 28px;
-  width: 88%;
-  border: none;
-  margin-left: 5px;
-  &:focus {
-    border: none;
-    outline: none;
-  }
-}
-
 #title {
   display: flex;
   justify-content: center;
@@ -41,41 +30,22 @@ input {
   margin-top: 50px;
 }
 
-.inputData {
-  width: 440px;
+.input-container {
+  width: 540px;
   margin: 0 auto;
-}
-
-.inputData {
-  border: 2px inset rgb(133, 133, 133);
-  border-radius: 5px;
-  height: 30px;
-  background-color: field;
-
-  button {
-    border: none;
-    background-color: field;
-    display: inline-block;
-    width: 9%;
-    padding: 0;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
 }
 
 .wrapper {
   position: relative;
   margin: 0 auto;
-  width: 440px;
+  width: 540px;
 
   #searchList {
     border-radius: 3px;
     box-shadow: 0px 1.5px 5px 1px rgba(155, 154, 154, 0.75);
     background-color: rgb(255, 255, 255);
     min-height: 90px;
-    width: 440px;
+    width: 540px;
     position: absolute;
 
     p {
