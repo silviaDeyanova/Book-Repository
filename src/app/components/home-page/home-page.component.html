@@ -4,12 +4,6 @@
       <p>Home</p>
     </div>
     <div id="searchbar">
-      <!-- <div class="inputData">
-        <input
-          [(ngModel)]="searchTerm" name="searchTerm" type="text" placeholder="Search book" (ngModelChange)="searchBook(searchTerm)" 
-          (keyup.enter)="changeTheMostRatedCotent(searchTerm)"/>
-        <button (click)="changeTheMostRatedCotent(searchTerm)">🔎</button>
-      </div> -->
       <div class="input-container">
         <mat-icon>search2</mat-icon>
         <input type="search" [(ngModel)]="searchTerm" name="searchTerm" placeholder="Search book" (ngModelChange)="searchBook(searchTerm)" 
