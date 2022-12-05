@@ -1,21 +1,15 @@
-<div class="container">
+<div>
   <h2 mat-dialog-title>Edit</h2>
 
   <mat-dialog-content [formGroup]="form">
-    <mat-form-field>
-      <input matInput formControlName="title" type="text" />
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput formControlName="author" type="text" />
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput formControlName="resume" type="text"></textarea>
-    </mat-form-field>
+    <input formControlName="title" type="text" />
+    <input formControlName="author" type="text" />
+    <textarea formControlName="resume" type="text"></textarea>
   </mat-dialog-content>
-  <mat-dialog-actions>
+  <mat-dialog-actions align="center">
     <button
-      mat-raised-button
-      color="primary"
+      mat-button
+      class="primary"
       (click)="submit()"
       [disabled]="
         !form.controls.title.dirty &&
@@ -25,6 +19,14 @@
     >
       Submit
     </button>
-    <button mat-raised-button (click)="close()">Close</button>
+    <button
+      mat-button
+      cdkFocusInitial
+      [mat-dialog-close]="true"
+      class="primary"
+      (click)="close()"
+    >
+      Close
+    </button>
   </mat-dialog-actions>
 </div>

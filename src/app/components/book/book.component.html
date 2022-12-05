@@ -8,6 +8,8 @@
   <h4>{{ data.author }}</h4>
   <p>{{ data.resume }}</p>
   <button
+    mat-button
+    class="primary"
     [class.hide]="!loginService.userPublicData"
     (click)="openEditDialog()"
   >

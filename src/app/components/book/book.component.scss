@@ -24,21 +24,6 @@
     font-style: italic;
     margin-bottom: 9px;
   }
-
-  button {
-    background-color: #64b3f8;
-    border: none;
-    padding: 5px;
-    border: 2px groove cadetblue;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-
-    &:hover {
-      background-color: #89c8ff;
-      cursor: pointer;
-    }
-  }
 }
 
 .hide {

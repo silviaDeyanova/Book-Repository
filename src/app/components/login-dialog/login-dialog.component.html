@@ -2,21 +2,13 @@
   <h2 mat-dialog-title>Login</h2>
 
   <mat-dialog-content [formGroup]="form">
-    <mat-form-field>
-      <input placeholder="Username" formControlName="username" type="text" />
-    </mat-form-field>
+    <input placeholder="Username" formControlName="username" type="text" />
     <span
       class="warning"
       *ngIf="form.controls.username.touched && form.controls.username.invalid"
       >Required!</span
     >
-    <mat-form-field>
-      <input
-        placeholder="Password"
-        formControlName="password"
-        type="password"
-      />
-    </mat-form-field>
+    <input placeholder="Password" formControlName="password" type="password" />
     <span
       class="warning"
       *ngIf="form.controls.password.touched && form.controls.password.invalid"

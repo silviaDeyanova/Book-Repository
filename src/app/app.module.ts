@@ -17,6 +17,7 @@ import { EditDialogComponent } from './components/edit-dialog/edit-dialog.compon
 import { BookComponent } from './components/book/book.component';
 import { MatIconModule } from '@angular/material/icon';
 import { DWToastrModule } from 'dw-web-shared-lib';
+
 @NgModule({
   declarations: [
     AppComponent,

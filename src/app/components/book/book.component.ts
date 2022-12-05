@@ -4,6 +4,7 @@ import { IBook } from 'src/app/interfaces/IBook';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-book',
@@ -15,15 +16,17 @@ export class BookComponent implements OnInit {
   constructor(
     private bookService: BookService,
     public loginService: LoginService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private toastService: ToastrService
   ) {}
 
   ngOnInit(): void {}
 
   openEditDialog() {
     const dialogRef = this.dialog.open(EditDialogComponent, {
+      panelClass: 'content-dialog',
       width: '500px',
-      height: '400px',
+      height: '410px',
       disableClose: true,
       autoFocus: true,
       data: this.data,
@@ -34,9 +37,11 @@ export class BookComponent implements OnInit {
         this.bookService.updateBook(result).subscribe(
           (book) => {
             this.data = book;
+            this.toastService.success('Book updated successfully');
           },
           (error) => {
             console.error(error);
+            this.toastService.error(`${error}`);
           }
         );
       }
