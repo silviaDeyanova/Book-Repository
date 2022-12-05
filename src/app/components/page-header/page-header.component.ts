@@ -48,8 +48,9 @@ export class PageHeaderComponent implements OnInit {
 
   openLoginDialog() {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
+      panelClass: 'content-dialog',
       width: '350px',
-      height: '270px',
+      height: '300px',
       disableClose: true,
       autoFocus: true,
       data: {},

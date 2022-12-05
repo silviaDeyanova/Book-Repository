@@ -1,6 +1,7 @@
 import { IUser, IUserLoginData, IUserPublicData } from './../interfaces/IUser';
 import { ChangeDetectorRef, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 export class LoginService {
   public userPublicData: IUserPublicData | undefined; //Allow other components to use this without changing it (Immutable/Copy/Method...... other  shit)
   private userPrivateData: IUserLoginData | undefined; //Allow other components to use this without changing it (Immutable/Copy/Method...... other  shit)
-  constructor() {}
+  constructor(private toastService: ToastrService) {}
 
   login(user: IUserLoginData) {
     if (
@@ -19,10 +20,12 @@ export class LoginService {
       Object.freeze(this.userPublicData);
 
       this.userPrivateData = user;
+      this.toastService.success('Login successfully');
     } else {
       this.userPublicData = undefined;
       this.userPrivateData = undefined;
       console.error('Invalid username or password');
+      this.toastService.error('Invalid username or password');
     }
   }
 
