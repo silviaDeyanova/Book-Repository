@@ -17,6 +17,7 @@ import { EditDialogComponent } from './components/edit-dialog/edit-dialog.compon
 import { BookComponent } from './components/book/book.component';
 import { MatIconModule } from '@angular/material/icon';
 import { DWToastrModule } from 'dw-web-shared-lib';
+import { TestGridstackComponent } from './components/test-gridstack/test-gridstack.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DWToastrModule } from 'dw-web-shared-lib';
     LoginDialogComponent,
     EditDialogComponent,
     BookComponent,
+    TestGridstackComponent,
   ],
   imports: [
     BrowserModule,

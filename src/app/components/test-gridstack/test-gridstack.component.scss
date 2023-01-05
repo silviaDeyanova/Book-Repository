@@ -1,0 +1,16 @@
+.grid-stack {
+  background: white;
+  padding: 2rem;
+}
+.grid-stack-item-content {
+  background-color: rgb(226, 225, 225);
+  padding: 10px;
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// .grid-stack-item[gs-w="1"] {
+//   width: 10%;
+// }

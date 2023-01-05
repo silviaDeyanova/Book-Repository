@@ -28,6 +28,7 @@
     "autonumeric": "^4.6.0",
     "dw-web-shared-lib": "^2.5.1-4",
     "fileseek_plus": "^1.0.4",
+    "gridstack": "^7.1.1",
     "imask": "^6.4.3",
     "moment": "^2.29.4",
     "ngx-toastr": "^14.3.0",
